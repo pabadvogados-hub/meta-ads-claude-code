@@ -1,0 +1,5 @@
+Coloque aqui os videos e imagens dos anuncios (ex.: video_curto.mp4, video_longo.mp4).
+No JSON da campanha, escreva so o nome do arquivo.
+
+Video: vertical (9:16), MP4, de preferencia ate 60 s e ate 500 MB. O curto (20 a 25 s) e o longo (40 a 45 s) com o MESMO conteudo.
+Imagem: 1080x1350 (4:5) ou 1080x1920 (9:16), JPG ou PNG.

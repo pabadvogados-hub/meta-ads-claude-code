@@ -1,0 +1,60 @@
+{
+  "nome_campanha": "[MENSAGEM WHATSAPP] Trabalhista - Gestantes - 2 vídeos",
+  "destino": "WHATSAPP",
+  "pagina_id": "",
+  "whatsapp_numero": "",
+  "mensagem_inicial": "Olá, vi o vídeo sobre os direitos da gestante e quero entender o meu caso.",
+
+  "conjuntos": [
+    {
+      "nome": "Vídeo curto (22 s) - Grande SP",
+      "orcamento_diario": 20,
+      "idade_min": 22,
+      "idade_max": 45,
+      "genero": 2,
+      "locais": {
+        "paises": [],
+        "regioes": [],
+        "cidades": [
+          { "nome": "São Paulo", "raio_km": 40 }
+        ]
+      },
+      "anuncios": [
+        {
+          "codigo": "A1",
+          "nome": "Gestante demitida - curto",
+          "video": "video_curto.mp4",
+          "texto_principal": "Foi demitida estando grávida? A lei protege a gestante desde a confirmação da gravidez até cinco meses após o parto. Entenda como isso funciona no seu caso.",
+          "titulo": "Estabilidade da gestante",
+          "descricao": "Toque no botão e mande a sua dúvida.",
+          "mensagem_inicial": "Olá, vi o vídeo sobre os direitos da gestante e quero entender o meu caso. [A1]"
+        }
+      ]
+    },
+    {
+      "nome": "Vídeo longo (42 s) - Grande SP",
+      "orcamento_diario": 20,
+      "idade_min": 22,
+      "idade_max": 45,
+      "genero": 2,
+      "locais": {
+        "paises": [],
+        "regioes": [],
+        "cidades": [
+          { "nome": "São Paulo", "raio_km": 40 }
+        ]
+      },
+      "anuncios": [
+        {
+          "codigo": "A2",
+          "nome": "Gestante demitida - longo",
+          "video": "video_longo.mp4",
+          "texto_principal": "Foi demitida estando grávida? A lei protege a gestante desde a confirmação da gravidez até cinco meses após o parto. Entenda como isso funciona no seu caso.",
+          "titulo": "Estabilidade da gestante",
+          "descricao": "Toque no botão e mande a sua dúvida.",
+          "mensagem_inicial": "Olá, vi o vídeo sobre os direitos da gestante e quero entender o meu caso. [A2]"
+        }
+      ]
+    }
+  ]
+}

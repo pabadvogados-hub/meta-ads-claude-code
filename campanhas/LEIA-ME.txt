@@ -1,0 +1,1 @@
+Salve aqui os JSONs das suas campanhas e o documento_chave.md

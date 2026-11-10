@@ -1,0 +1,5 @@
+.env
+campanhas_criadas.json
+__pycache__/
+midia/*
+!midia/LEIA-ME.txt
