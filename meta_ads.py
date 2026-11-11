@@ -321,8 +321,16 @@ def cmd_relatorio(a):
     conta = a.conta or CONTA
     nivel = a.nivel
     campos = "campaign_name,adset_name,ad_name,spend,impressions,clicks,ctr,actions"
+    extra = {}
+    quebras = []
+    if getattr(a, "detalhar", None):
+        mapa = {"idade": "age", "genero": "gender", "plataforma": "publisher_platform", "posicao": "platform_position"}
+        quebras = [mapa[x.strip()] for x in a.detalhar.split(",") if x.strip() in mapa]
+        if not quebras:
+            sys.exit("Use --detalhar com: idade, genero, plataforma, posicao (separados por virgula).")
+        extra["breakdowns"] = ",".join(quebras)
     linhas = get_todos(f"{a.id or conta}/insights", level=nivel, fields=campos,
-                       date_preset=a.periodo, limit=500)
+                       date_preset=a.periodo, limit=500, **extra)
     if not linhas:
         print("Sem dados nesse periodo.")
         return
@@ -330,6 +338,8 @@ def cmd_relatorio(a):
     tot_g = tot_c = 0
     for r in sorted(linhas, key=lambda x: -float(x.get("spend", 0))):
         nome = r.get({"campaign": "campaign_name", "adset": "adset_name", "ad": "ad_name"}[nivel], "?")
+        if quebras:
+            nome += " | " + " / ".join(str(r.get(q, "?")) for q in quebras)
         g = float(r.get("spend", 0))
         c = _conversas(r.get("actions"))
         tot_g += g
@@ -626,7 +636,7 @@ def main():
     p = sub.add_parser("buscar-local"); p.add_argument("texto"); p.set_defaults(f=cmd_buscar_local)
     p = sub.add_parser("campanhas"); p.add_argument("--conta"); p.add_argument("--ativas", action="store_true"); p.set_defaults(f=cmd_campanhas)
     p = sub.add_parser("relatorio"); p.add_argument("--id"); p.add_argument("--conta")
-    p.add_argument("--periodo", default="last_7d"); p.add_argument("--nivel", default="ad", choices=["campaign", "adset", "ad"]); p.set_defaults(f=cmd_relatorio)
+    p.add_argument("--periodo", default="last_7d"); p.add_argument("--nivel", default="ad", choices=["campaign", "adset", "ad"]); p.add_argument("--detalhar", help="idade,genero,plataforma,posicao"); p.set_defaults(f=cmd_relatorio)
     p = sub.add_parser("validar"); p.add_argument("arquivo"); p.set_defaults(f=cmd_validar)
     p = sub.add_parser("criar"); p.add_argument("arquivo"); p.add_argument("--executar", action="store_true")
     p.add_argument("--ignorar-oab", action="store_true"); p.set_defaults(f=cmd_criar)

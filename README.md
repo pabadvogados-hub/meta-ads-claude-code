@@ -90,6 +90,8 @@ Estando certo, peça ao Claude Code: "pode ativar". Ele roda `python meta_ads.py
 
 ### 8. Acompanhar e decidir
 `/relatorio` no Claude Code, ou `python meta_ads.py relatorio --periodo last_7d`.
+Para ver **quem responde melhor** (por faixa etária, gênero ou plataforma): `python meta_ads.py relatorio --periodo last_30d --nivel ad --detalhar idade,genero`
+(opções: `idade`, `genero`, `plataforma`, `posicao`). Use para ajustar o público e os vídeos.
 Registre na planilha o código (A1, A2) de cada lead e quantos assinaram. **Decida pelo custo por contrato assinado**, não pelo custo por lead.
 - Pausar: gastou o bastante e não deu contrato, ou custa mais que o dobro do melhor.
 - Subir verba: só depois de pelo menos 3 contratos.
