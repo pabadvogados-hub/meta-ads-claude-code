@@ -21,6 +21,8 @@ Comandos: `testar`, `contas`, `paginas`, `buscar-local`, `campanhas`, `relatorio
    que isso reinicia o aprendizado e deixe ele decidir.
 6. Nunca apague campanha. Para parar, `pausar`.
 7. Nunca mande o token por nenhum canal, nem inclua em arquivo que vá para o GitHub.
+8. Se o usuário colar um token na conversa, NÃO o grave em arquivo nem o use. Diga para rodar `python meta_ads.py configurar` num terminal comum (o token é digitado oculto e vai direto para o `.env`) e, por ter aparecido na conversa, sugira revogar esse token na Meta e gerar outro.
+9. Se faltar o `.env`, a pasta pode ser temporária: oriente a mover o projeto para uma pasta fixa antes de configurar.
 
 ## Provimento 205/2021 da OAB (publicidade na advocacia)
 Pode: informar, explicar o que a lei prevê, explicar como funciona um processo, mostrar escritório e equipe.
